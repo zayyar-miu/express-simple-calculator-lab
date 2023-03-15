@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  div(class='flex items-center justify-center h-screen')
+    form(action='/calculate', class='bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4', method='POST')
+      div.mb-4
+        h1= title
+      div.mb-4
+        label(class='block text-gray-700 text-sm font-bold mb-2', for='number_x') Number x:
+        input(name='number_x', class='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline', id='student_name', type='number', placeholder='x')
+      div.mb-4
+        label(class='block text-gray-700 text-sm font-bold mb-2', for='number_y') Number x:
+        input(name='number_y', class='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline', id='student_name', type='number', placeholder='y')
+      div.mb-4
+          label(class='block text-gray-700 text-sm font-bold mb-2', for='operation') Operation:
+          select(name='operation', id='operation', class='shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline')
+            option(value="add") Add
+            option(value="substract") Substract
+            option(value="multiply") Multiply
+            option(value="divide") Divide
+      div(class='flex items-center justify-between')
+        input(type='submit', value='Calculate!', class='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline')
